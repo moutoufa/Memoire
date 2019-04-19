@@ -72,7 +72,7 @@ public class Register  {
 
         super.oncreate(savedInstanceState);
 
-        setContentView(R.layout.activity_register);
+        setContentView(R.layout.register);
 
         username = (EditText)findViewById(R.id.username_field);
 
