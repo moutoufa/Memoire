@@ -27,12 +27,10 @@ public class Background extends AsyncTask<String,Void,String> {
     @Override
     protected String doInBackground(String... params) {
 
-        String login_url = "";
-        String type = params[0];
-        if (type.equals("login")) {
+        String login_url = "paiementmodou.000webhostapp.com/Login.php";
             try {
-                String cin = params[1];
-                String password = params[2];
+                String cin = params[0];
+                String password = params[1];
                 URL url = new URL(login_url);
                 HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
                 httpURLConnection.setRequestMethod("POST");
@@ -64,16 +62,6 @@ public class Background extends AsyncTask<String,Void,String> {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        }
-        else if (type.equals("register")){
-
-
-            //Ngueu copier lou nek ci birrr if login en haut bi changer
-
-
-
-
-        }
         return null;
     }
 
@@ -83,19 +71,14 @@ public class Background extends AsyncTask<String,Void,String> {
     @Override
     protected void onPreExecute() {
         alertDialog=new AlertDialog.Builder(context).create();
-        alertDialog.setTitle("Verification");
+        alertDialog.setTitle("Login");
 
     }
 
     @Override
     protected void onPostExecute(String result) {
-        if (result.equals("OK")){
-            Intent intent=new Intent(context,Accueil.class);
-            context.startActivity(intent);
-        }
-        else {
-            //MESSAGE CIN OU MDP INCORRECT
-        }
+      alertDialog.setMessage(result);
+      alertDialog.show();
 
 
     }

@@ -9,7 +9,6 @@ import android.widget.EditText;
 public class MainActivity extends AppCompatActivity {
 
     private EditText Cin,Password;
-    private Button Login;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,16 +17,14 @@ public class MainActivity extends AppCompatActivity {
 
         Cin=(EditText)findViewById(R.id.edCin);
         Password=(EditText)findViewById(R.id.edMdp);
-        Login=(Button) findViewById(R.id.btnLogin);
 
     }
 
     public void Login(View view){
-        Background background=new Background(this);
         String password=Password.getText().toString();
         String cin=Cin.getText().toString();
-        String type="login";
-        background.execute(type,cin,password);
+        Background background=new Background(this);
+        background.execute(cin,password);
 
     }
 }
