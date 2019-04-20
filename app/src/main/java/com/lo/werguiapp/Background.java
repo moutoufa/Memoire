@@ -29,6 +29,7 @@ public class Background extends AsyncTask<String,Void,String> {
 
         String login_url = "paiementmodou.000webhostapp.com/Login.php";
             try {
+                //kjk
                 String cin = params[0];
                 String password = params[1];
                 URL url = new URL(login_url);
