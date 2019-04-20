@@ -1,4 +1,4 @@
-package com.lo.werguiapp;
+/*package com.lo.werguiapp;
 
 import android.content.Intent;
 
